@@ -17,8 +17,23 @@ class PostController extends AppController
             return 'test';
         }
 
+        //UPDATE
+
+//        $post = TestForm::findOne(3);
+//        $post->email = '2@2.com';
+//        $post->save();
+//        debug($post);
+        //TestForm::updateAll(['>','id', 6]);
+
+        //DELETE
+//        $post = TestForm::findOne(2);
+//        $post->delete();
+//        debug($post);
+
+        //TestForm::deleteAll(['>','id', 6]);
+
         $model = new TestForm();
-        //insert
+        //INSERT/CREATE
         /*$model->name = 'Автор';
         //$model->email = 'mail@gmail.com';
         $model->text = 'hello мир!';*/
@@ -45,6 +60,8 @@ class PostController extends AppController
         $this->view->registerMetaTag(['name'=>'keywords', 'content'=>'Ключи']);
         $this->view->registerMetaTag(['name'=>'description', 'content'=>'Описание']);
 
+
+        //SELECT/READ
 //        $cats = Category::find()->all();
 //        $cats = Category::find()->orderBy(['id'=>SORT_DESC])->all();
 //        $cats = Category::find()->asArray()->all();

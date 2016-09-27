@@ -29,6 +29,9 @@ class TestForm extends ActiveRecord
     public function rules()
     {
         return [
+            [['text'], 'filter', 'filter' => function($value) {
+                return trim(strip_tags($value));
+            }],
             [['name','text'], 'required'],
             ['email','email'],
             //['name', 'string','min'=>2, 'tooShort'=>'tooshort'],

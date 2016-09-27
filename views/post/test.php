@@ -23,6 +23,7 @@ if(Yii::$app->session->hasFlash('success')){?>
 $form = ActiveForm::begin(['options'=>['id'=>'testForm']]);
 echo $form->field($model, 'name');
 echo $form->field($model, 'email');
+echo yii\jui\DatePicker::widget(['name' => 'attributeName']);
 echo $form->field($model, 'text')->textarea(['rows'=>5]);
 echo Html::submitButton('SEND',['class'=>'btn btn-success']);
 ActiveForm::end();

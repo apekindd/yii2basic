@@ -18,10 +18,17 @@ class PostController extends AppController
         }
 
         $model = new TestForm();
+        //insert
+        /*$model->name = 'Автор';
+        //$model->email = 'mail@gmail.com';
+        $model->text = 'hello мир!';*/
+
+        //$model->save();
+
 
         //check request
         if( $model->load(Yii::$app->request->post()) ){
-            if( $model->validate() ){
+            if( $model->save() ){
                 Yii::$app->session->setFlash('success','Данные приняты');
                 //clean post
                 return $this->refresh();

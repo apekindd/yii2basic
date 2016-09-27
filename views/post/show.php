@@ -1,5 +1,6 @@
 <?php
 //$this->title='Post!';
+use app\components\MyWidget;
 ?>
 
 <?php $this->beginBlock('block1');?>
@@ -11,7 +12,7 @@
 <?php //echo '<pre>';print_r($cats); echo '</pre>'; ?>
 
 <?php
-foreach ($cats as $cat) {
+/*foreach ($cats as $cat) {
     echo "<ul>";
      echo "<li>".$cat->title."</li>";
     $products = $cat->products;
@@ -21,8 +22,14 @@ foreach ($cats as $cat) {
         echo "</ul>";
     }
     echo "</ul>";
-}
+}*/
 ?>
+
+<?php //echo MyWidget::widget(); ?>
+
+<?php MyWidget::begin(); ?>
+<h1>Hi from widget!!! :)</h1>
+<?php MyWidget::end(); ?>
 
 <?php
 //foreach ($cats as $cat) {

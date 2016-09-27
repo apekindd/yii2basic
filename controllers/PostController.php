@@ -53,10 +53,18 @@ class PostController extends AppController
 //        $cats = Category::findBySql($query)->all();
 
         //safety
-        $query = "SELECT * FROM category WHERE title LIKE :search";
-        $cats = Category::findBySql($query, [':search' => '%o%'])->all();
-
-
+//        $query = "SELECT * FROM category WHERE title LIKE :search";
+//        $cats = Category::findBySql($query, [':search' => '%o%'])->all();
+        /*
+         *  Ленивая/отложенная загрузка(одни категория - один запрос для связанные) без with()!!!
+         * Использовать если элементов мало и есть шанс что связь НЕ потребуется
+         */
+       // $cats = Category::find()->all();
+        /*
+         * жадная загрузка(получаем все связанные элементы за раз)
+         * Если есть шанс что связь потребуется
+         */
+        $cats = Category::find()->with('products')->all();
 
         return $this->render('show', compact('cats'));
     }

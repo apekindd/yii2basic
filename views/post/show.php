@@ -8,7 +8,21 @@
 
 <h1>Show Action</h1>
 
-<?php echo '<pre>';print_r($cats); echo '</pre>'; ?>
+<?php //echo '<pre>';print_r($cats); echo '</pre>'; ?>
+
+<?php
+foreach ($cats as $cat) {
+    echo "<ul>";
+     echo "<li>".$cat->title."</li>";
+    $products = $cat->products;
+    foreach ($products as $product) {
+        echo "<ul>";
+         echo "<li>".$product->title."</li>";
+        echo "</ul>";
+    }
+    echo "</ul>";
+}
+?>
 
 <?php
 //foreach ($cats as $cat) {

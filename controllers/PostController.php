@@ -46,6 +46,17 @@ class PostController extends AppController
 //        $cats = Category::find()->asArray()->where(['like','title','un'])->all();
 //        $cats = Category::find()->asArray()->where(['>=','id','3'])->limit(2)->all();
 //        $cats = Category::find()->asArray()->where(['>=','id','3'])->limit(1)->one();
+//        $cats = Category::find()->count();
+//        $cats = Category::findOne(['>=','id','3']);
+//        $cats = Category::findAll(['id'=>'2']);
+//        $query = "SELECT * FROM category WHERE title LIKE '%un%'";
+//        $cats = Category::findBySql($query)->all();
+
+        //safety
+        $query = "SELECT * FROM category WHERE title LIKE :search";
+        $cats = Category::findBySql($query, [':search' => '%o%'])->all();
+
+
 
         return $this->render('show', compact('cats'));
     }

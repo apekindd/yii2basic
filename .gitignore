@@ -7,3 +7,6 @@ protected/runtime/*
 protected/data/*.db
 themes/classic/views/
 
+vendor/ezyang/htmlpurifier/plugins/phorum/htmlpurifier/
+vendor/yiisoft/yii2/console/runtime/
+yii2/

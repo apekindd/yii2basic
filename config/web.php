@@ -48,6 +48,8 @@ $config = [
             'rules' => [
                 "<action:(about|contact|login)>"=>"site/<action>", //<a> \w+(all) or (about|contact|...)
                 "<action:(show)>"=>"post/<action>",
+                'product/<id:\d+>' => 'product/detail',
+                "<action:(products)>"=>"product/<action>",
             ],
         ],
     ],

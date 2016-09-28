@@ -41,6 +41,7 @@ AppAsset::register($this);
             ['label' => 'Articles', 'url' => ['/post/index']],
             ['label' => 'About', 'url' => ['/about']],
             ['label' => 'Contact', 'url' => ['/contact']],
+            ['label' => 'Products', 'url' => ['/product']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
@@ -60,9 +61,7 @@ AppAsset::register($this);
 
     <div class="container">
 
-        <?php echo Html::a('Home', Url::to('/'))?>
-        <?php echo Html::a('about', Url::to(['/about']))?>
-        <?php echo Html::a('contact', Url::to(['/contact']))?>
+        <?php //echo Html::a('Products', Url::to('/product'))?>
 
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],

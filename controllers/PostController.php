@@ -8,7 +8,8 @@ use app\models\Category;
 
 class PostController extends AppController
 {
-   public $layout = 'basic';
+    //Ручное изменение шаблона для контроллера
+   public $layout = 'main';
 
     public function actionIndex(){
 

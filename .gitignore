@@ -8,4 +8,6 @@ protected/runtime/*
 protected/data/*.db
 themes/classic/views/
 
-.idea/dataSources/88e48331-896e-43db-b0a0-9ffa97630af1.xml___jb_tmp___
+vendor/ezyang/htmlpurifier/plugins/phorum/htmlpurifier/
+vendor/yiisoft/yii2/console/runtime/
+yii2/

@@ -7,11 +7,12 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language'=>'ru',
-//    'layout' => 'basic',
+    'layout' => 'main',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '7nfNplsgY5pu45bGD3tJ-fZP2u9C6G4P',
+            'baseUrl'=> '',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -40,14 +41,17 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            //'suffix'=>'.html', //add .html to the file request
             'rules' => [
+                "<action:(about|contact|login)>"=>"site/<action>", //<a> \w+(all) or (about|contact|...)
+                "<action:(show)>"=>"post/<action>",
+                'product/<id:\d+>' => 'product/detail',
+                "<action:(products)>"=>"product/<action>",
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
